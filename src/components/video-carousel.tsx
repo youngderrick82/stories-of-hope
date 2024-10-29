@@ -1,27 +1,18 @@
 "use client";
 import React from "react";
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+import { Splide, SplideSlide, SplideTrack } from "react-splide-ts";
 import carouselData from "./sampleData/carouselData";
 import {
-  CircleArrowRight,
   Play,
   Pause,
 } from "lucide-react";
-
-type carouselDataType = {
-  header: string;
-  description: string;
-  image: string;
-  linkAddress: string;
-  linkText: string;
-};
 
 export const VideoCarousel: React.FunctionComponent = () => {
   const [activeSlideContent, setActiveSlideContent] = React.useState(
     carouselData[0]
   );
   const [padding, setPadding] = React.useState({ right: '0rem' })
-  const splideRef = React.useRef<any>(null);
+  const splideRef = React.useRef<Splide | null>(null);
 
   const updatePadding = () => {
     const screenWidth = window.innerWidth;
@@ -39,23 +30,23 @@ export const VideoCarousel: React.FunctionComponent = () => {
     return () => window.removeEventListener("resize", updatePadding);
   })
 
-  var options = {
+  const options = {
     type: "loop",
     gap: "1rem",
     autoplay: true,
     pauseOnHover: false,
     resetProgress: false,
     height: "1rem",
-    focus: "center",
+    focus: "center" as const,
     padding: padding,
   };
 
 
   React.useEffect(() => {
-    if (splideRef.current) {
-      splideRef.current.splide.on("pagination:mounted", (data: any) => {
+    if (splideRef.current && splideRef.current.splide) {
+      splideRef.current.splide.on("pagination:mounted", (data: { list: HTMLElement; items: { button: HTMLElement}[] }) => {
         data.list.classList.add("splide__pagination--custom");
-        data.items.forEach((item: any) => {
+        data.items.forEach((item) => {
           item.button.classList.add("custom-pagination-dot");
         });
       });
@@ -63,8 +54,7 @@ export const VideoCarousel: React.FunctionComponent = () => {
   }, []);
 
 
-  const handleSplideChange = (splide: any) => {
-    const index = splide.index;
+  const handleSplideChange = (splide: unknown, index: number,) => {
     setActiveSlideContent(carouselData[index]);
   };
 
