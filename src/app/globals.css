@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
 
 :root {
   --background: #ffffff;
@@ -9,7 +19,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #2a2a2a;
     --foreground: #ededed;
   }
 }
@@ -18,4 +28,28 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.splide__progress__bar {
+  background: yellow !important;
+}
+
+.splide__arrow--prev {
+  background: #262861 !important;
+}
+
+.splide__arrow--next {
+  background: #262861 !important;
+}
+
+
+@media (min-width: 1440px){
+.custom-pagination-dot {
+  display: absolute;
+  top: 50px;
+  left: -398px;
+  margin-right: 10px !important;
+  height: 15px !important;
+  width: 15px !important;
+}
 }

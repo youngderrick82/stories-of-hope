@@ -12,6 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        roboto: ['roboto', 'sans-serif'],
+        DM: ["DM Sans", "sans-serif"],
+        roboto_mono: ['roboto-mono', 'sans-serif'],
+      },
+      
     },
   },
   plugins: [],
