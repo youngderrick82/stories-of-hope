@@ -168,7 +168,7 @@ export const VideoCarousel: React.FunctionComponent = () => {
           <div className="absolute">
             <img
               src="Group 14.png"
-              className="relative align-center ml-4 left-[16rem] bottom-[17px] lg:left-60 md:left-[38rem] "
+              className="relative align-center ml-4 left-[16rem] bottom-[17px] lg:left-60"
             />
           </div>
         </button>
