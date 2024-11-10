@@ -13,8 +13,8 @@
 
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #ffffff;
+  --foreground: #171717; */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,11 +35,24 @@ body {
 }
 
 .splide__arrow--prev {
-  background: #262861 !important;
+  background:#262861 !important;
+  opacity: 1 !important;
 }
 
 .splide__arrow--next {
   background: #262861 !important;
+  opacity: 1 !important;
+}
+
+.splide__video__play {
+  background: red !important;
+  width: 60px !important;
+  border-radius: 20% !important;
+  background-image: url("../../public/youtube.png");
+}
+
+.splide__video__play::after {
+  border-color: transparent transparent transparent #fff !important;
 }
 
 
